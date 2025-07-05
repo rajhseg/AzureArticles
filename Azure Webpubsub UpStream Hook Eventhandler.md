@@ -50,7 +50,7 @@
     
     [Function("Broadcast")]
     public static WebPubSubEventResponse Run(
-    [WebPubSubTrigger("Hubabcd", WebPubSubEventType.System, "Connect")] ConnectEventRequest request)
+    [WebPubSubTrigger("HubName", WebPubSubEventType.System, "Connect")] ConnectEventRequest request)
     {
             // You can add custom logic here to handle the connection request
             // For example, you can check the origin and return a specific response
@@ -87,7 +87,7 @@
 
    Sample code:
    
-    WebPubSubServiceClient client = new WebPubSubServiceClient(conn, "Hubabcd");
+    WebPubSubServiceClient client = new WebPubSubServiceClient(conn, "HubName");
     Console.WriteLine("Enter a message to send:");
     string message = Console.ReadLine();
     
