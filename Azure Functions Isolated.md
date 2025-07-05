@@ -1,4 +1,4 @@
-# AzureArticles
+# Azure Articles
 
 1. Azure Functions Isolated
    <br/>
