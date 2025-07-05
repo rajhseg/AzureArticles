@@ -29,10 +29,11 @@
       }
 
   3. Azure Function Isolated with connect upstream handler
+     
    **Reference: https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-web-pubsub-trigger?tabs=isolated-process%2Cnodejs-v4&pivots=programming-language-csharp**
    
     Below one specific to one Hub ( EventHandlerUrl= <Function_App_Url>/runtime/webhooks/webpubsub?code=<**webpubsub_extension** key from AppKeys of Function> )
-   ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+   
    **UpStream EventHandler** Url Sample **https://webpubsubtrdesd.azurewebsites.net/runtime/webhooks/webpubsub?code=F_sYDrpz7BdvmK57dha_po2a6Y2tttyTSG3QYJde9DAzFuIiOP4A==**
 	
     [Function("Broadcast")]
@@ -71,6 +72,7 @@
 
 
   3. ServiceClient send messages to client using various formats
+     
   **Reference from: https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/webpubsub/Azure.Messaging.WebPubSub/tests/Samples/WebPubSubSamples.HelloWorld.cs**
 
    Sample code:
