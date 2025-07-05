@@ -52,14 +52,11 @@
     public static WebPubSubEventResponse Run(
     [WebPubSubTrigger("Hubabcd", WebPubSubEventType.System, "Connect")] ConnectEventRequest request)
     {
-        if (request.Headers["Origin"][0].ToLower().Trim()== "https://aaaaa.com")
-        {
             // You can add custom logic here to handle the connection request
             // For example, you can check the origin and return a specific response
             return new ConnectEventResponse() { UserId = "user123" };
-        }   
-    
-        return new EventErrorResponse() { Code = WebPubSubErrorCode.Unauthorized, ErrorMessage="UnAuthorized" };
+          
+        //return new EventErrorResponse() { Code = WebPubSubErrorCode.Unauthorized, ErrorMessage="UnAuthorized" };
     }
 
    Below one is Generic connect method works for all Hub  
