@@ -53,7 +53,8 @@
 
    Below one is Generic connect method works for all Hub  ( EventHandlerUrl= <Function_App_Url>/api/{event} )
    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   **UpStream EventHandler** Url Sample **https://webpubsubfun3.azurewebsites.net/api/{event}**
+   
+   **UpStream EventHandler Sample url**  **https://webpubsubfwwwww.azurewebsites.net/api/{event}**
 
     // validate method when upstream set as **http://<func-host>/api/{event}**
 
