@@ -34,7 +34,9 @@
    
    **UpStream Sample EventHandler Url** **https://webpubsubtrdesd.azurewebsites.net/runtime/webhooks/webpubsub?code=F_sYDrpz7BdvmK57dha_po2a6Y2tttyTSG3QYJde9DAzFuIiOP4A==**
    
-   Below one specific to one Hub ( EventHandlerUrl= <Function_App_Url>/runtime/webhooks/webpubsub?code=<webpubsub_extension key from AppKeys of Function> )
+   Below one specific to one Hub 
+   ( EventHandlerUrl= <Function_App_Url>/runtime/webhooks/webpubsub?code=<webpubsub_extension key from AppKeys of Function> )
+   
    copy the value of webpubsub_extension key from azure function app keys section.
    
     [Function("Broadcast")]
@@ -51,10 +53,10 @@
         return new EventErrorResponse() { Code = WebPubSubErrorCode.Unauthorized, ErrorMessage="UnAuthorized" };
     }
 
-   Below one is Generic connect method works for all Hub  ( EventHandlerUrl= <Function_App_Url>/api/{event} )
-   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   
-   **UpStream EventHandler Sample url**  **https://webpubsubfwwwww.azurewebsites.net/api/{event}**
+   Below one is Generic connect method works for all Hub  
+   ( EventHandlerUrl= <Function_App_Url>/api/{event} )
+  
+   **UpStream EventHandler Sample url**: **https://webpubsubfwwwww.azurewebsites.net/api/{event}**
 
     // validate method when upstream set as **http://<func-host>/api/{event}**
 
