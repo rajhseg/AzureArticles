@@ -1,6 +1,7 @@
 # AzureArticles
 
 1. Azure Functions Isolated
+   <br/>
     Reference : https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide?tabs=hostbuilder%2Cwindows
 
     1. To debug the Azure Function remotely
