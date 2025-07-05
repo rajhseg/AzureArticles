@@ -32,10 +32,11 @@
      
    **Reference: https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-web-pubsub-trigger?tabs=isolated-process%2Cnodejs-v4&pivots=programming-language-csharp**
    
-   **UpStream EventHandler** Url Sample **https://webpubsubtrdesd.azurewebsites.net/runtime/webhooks/webpubsub?code=F_sYDrpz7BdvmK57dha_po2a6Y2tttyTSG3QYJde9DAzFuIiOP4A==**
+   **UpStream Sample EventHandler Url** **https://webpubsubtrdesd.azurewebsites.net/runtime/webhooks/webpubsub?code=F_sYDrpz7BdvmK57dha_po2a6Y2tttyTSG3QYJde9DAzFuIiOP4A==**
    
-	 Below one specific to one Hub ( EventHandlerUrl= <Function_App_Url>/runtime/webhooks/webpubsub?code=<**webpubsub_extension** key from AppKeys of Function> )
-  
+   Below one specific to one Hub ( EventHandlerUrl= <Function_App_Url>/runtime/webhooks/webpubsub?code=<webpubsub_extension key from AppKeys of Function> )
+   copy the value of webpubsub_extension key from azure function app keys section.
+   
     [Function("Broadcast")]
     public static WebPubSubEventResponse Run(
     [WebPubSubTrigger("Hubabcd", WebPubSubEventType.System, "Connect")] ConnectEventRequest request)
