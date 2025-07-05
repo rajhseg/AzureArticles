@@ -2,16 +2,10 @@
 
 # 1. WebPubSub Service articles.
 
- All Reference Urls:
-   1. https://learn.microsoft.com/en-us/dotnet/api/overview/azure/microsoft.azure.functions.worker.extensions.webpubsub-readme?view=azure-dotnet
-   2. https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-web-pubsub-trigger?tabs=isolated-process%2Cnodejs-v4&pivots=programming-language-csharp
-   3. https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/webpubsub/Azure.Messaging.WebPubSub/tests/Samples/WebPubSubSamples.HelloWorld.cs
-   4. https://github.com/JialinXin/azure-sdk-for-net/blob/awps/isolated-func/sdk/webpubsub/Microsoft.Azure.Functions.Worker.Extensions.WebPubSub/samples/Sample4_HttpTriggerInputBinding.md
-   5. https://github.com/Azure/azure-sdk-for-net/tree/Microsoft.Azure.Functions.Worker.Extensions.WebPubSub_1.7.0-beta.1/sdk/webpubsub/Microsoft.Azure.Functions.Worker.Extensions.WebPubSub/samples
-   6. https://github.com/JialinXin/azure-sdk-for-net/blob/awps/isolated-func/sdk/webpubsub/Microsoft.Azure.Functions.Worker.Extensions.WebPubSub/samples/Sample3_EventNotification.md
-      
   1. Validate options method in azure function for upstream handler
+     
    **Reference: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/microsoft.azure.functions.worker.extensions.webpubsub-readme?view=azure-dotnet**
+   
       // validate method when upstream set as http://<func-host>/api/{event}
       [Function("validate")]
       public static HttpResponseData Validate(
@@ -34,7 +28,7 @@
           return response;
       }
 
-  2. Azure Function Isolated with connect upstream handler
+  3. Azure Function Isolated with connect upstream handler
    **Reference: https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-web-pubsub-trigger?tabs=isolated-process%2Cnodejs-v4&pivots=programming-language-csharp**
    
     Below one specific to one Hub ( EventHandlerUrl= <Function_App_Url>/runtime/webhooks/webpubsub?code=<**webpubsub_extension** key from AppKeys of Function> )
@@ -94,7 +88,14 @@
 
 
 
-
+ All Reference Urls:
+   1. https://learn.microsoft.com/en-us/dotnet/api/overview/azure/microsoft.azure.functions.worker.extensions.webpubsub-readme?view=azure-dotnet
+   2. https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-web-pubsub-trigger?tabs=isolated-process%2Cnodejs-v4&pivots=programming-language-csharp
+   3. https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/webpubsub/Azure.Messaging.WebPubSub/tests/Samples/WebPubSubSamples.HelloWorld.cs
+   4. https://github.com/JialinXin/azure-sdk-for-net/blob/awps/isolated-func/sdk/webpubsub/Microsoft.Azure.Functions.Worker.Extensions.WebPubSub/samples/Sample4_HttpTriggerInputBinding.md
+   5. https://github.com/Azure/azure-sdk-for-net/tree/Microsoft.Azure.Functions.Worker.Extensions.WebPubSub_1.7.0-beta.1/sdk/webpubsub/Microsoft.Azure.Functions.Worker.Extensions.WebPubSub/samples
+   6. https://github.com/JialinXin/azure-sdk-for-net/blob/awps/isolated-func/sdk/webpubsub/Microsoft.Azure.Functions.Worker.Extensions.WebPubSub/samples/Sample3_EventNotification.md
+      
 
 
     
