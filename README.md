@@ -40,8 +40,10 @@
     UpStream Sample EventHandler Url : https://webpubsubtrdesd.azurewebsites.net/runtime/webhooks/webpubsub?code=F_sYDrpz7BdvmK57dha_po2a6Y2tttyTSG3QYJde9DAzFuIiOP4A==**
    <br/>
     copy the value of webpubsub_extension key from azure function app keys section.
+    
     <br/>
-      
+    <br/>
+    
     [Function("Broadcast")]
     public static WebPubSubEventResponse Run(
     [WebPubSubTrigger("Hubabcd", WebPubSubEventType.System, "Connect")] ConnectEventRequest request)
