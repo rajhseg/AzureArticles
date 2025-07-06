@@ -79,6 +79,34 @@ The value of WebHook-Allowed-Origin can be either * (allowing any origin) or the
         //return new EventErrorResponse() { Code = WebPubSubErrorCode.Unauthorized, ErrorMessage="UnAuthorized" };
     }
 
+  <br/>
+
+  For the Connected Event function will be like below.
+  
+  [Function("Broadcast1")]
+  public async Task Run(
+      [WebPubSubTrigger("%HubPub%", WebPubSubEventType.System, "Connected")] ConnectedEventRequest request)
+  {
+  
+          await Task.CompletedTask;
+  }
+
+  <br />
+
+  For the DisConnected Event function will be like below.
+
+  <br/>
+
+    [Function("Broadcast2")]
+    public async Task Run(
+        [WebPubSubTrigger("%HubPub%", WebPubSubEventType.System, "DisConnected")] DisconnectedEventRequest request)
+    {
+
+        await Task.CompletedTask;
+    }
+
+  <br/>
+
    Below one is Generic connect method works for all Hub  
    ( EventHandlerUrl= <Function_App_Url>/api/{event} )
   
