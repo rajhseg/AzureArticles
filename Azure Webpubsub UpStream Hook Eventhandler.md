@@ -1,7 +1,8 @@
 # AzureArticles
 
 # 1. WebPubSub Service articles.
-
+  To add a upstream eventhandler we have to add two endpoints one is Validate Options method endpoint, another one is event based endpoint, for example if the system event connect you want to hookup then it should be connect post method endpoint. Here we are using the Azure functons to create a http based two endpoints for upstream hookup eventhandler, if you want you can use the webapi also for this two endpoints. for example if this is the upstream hookup eventhandler url http://<func-host>/api/{event} then the validate options method url will be http://<func-host>/api/validate.
+  
   1. Validate options method in azure function for upstream handler
      
    **Reference: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/microsoft.azure.functions.worker.extensions.webpubsub-readme?view=azure-dotnet**
