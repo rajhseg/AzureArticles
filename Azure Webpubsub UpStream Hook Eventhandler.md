@@ -82,6 +82,8 @@ The value of WebHook-Allowed-Origin can be either * (allowing any origin) or the
   <br/>
 
   For the Connected Event function will be like below.
+
+  <br />
   
   [Function("Broadcast1")]
   public async Task Run(
