@@ -18,6 +18,9 @@ Reference From: https://learn.microsoft.com/en-us/azure/azure-web-pubsub/referen
 
 Allowed origins:
 The value of WebHook-Allowed-Origin can be either * (allowing any origin) or the specific Azure Web PubSub service domain (e.g., xxx.webpubsub.azure.com).
+
+<br/>
+
   1. Validate options method in azure function for upstream handler
      
    **Reference: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/microsoft.azure.functions.worker.extensions.webpubsub-readme?view=azure-dotnet**
