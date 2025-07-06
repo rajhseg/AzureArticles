@@ -12,6 +12,7 @@ When the PubSub service is connecting to the App, it first does an OPTIONS reque
 When configuring an Azure Web PubSub event handler, the service validates the upstream webhook URL using the CloudEvents Abuse Protection mechanism. This validation involves checking for the WebHook-Allowed-Origin header in the response to an OPTIONS request. The WebHook-Request-Origin header, set to the service domain (e.g., xxx.webpubsub.azure.com), is included in the OPTIONS request, and the upstream endpoint must respond with WebHook-Allowed-Origin header, which can be either * or the service domain. 
 
 <br/>
+
 Reference From: https://learn.microsoft.com/en-us/azure/azure-web-pubsub/reference-cloud-events
 
 <br/>
