@@ -5,7 +5,7 @@
 
 <br/>
 
-When the PubSub service is connecting to the App, it first does an OPTIONS request to the "/validate" endpoint. This request expects a response with HTTP header "WebHook-Allowed-Origin". 
+When the PubSub service is connecting to the App, it first does an OPTIONS request to the "/validate" endpoint. This request expects a response with HTTP header "WebHook-Allowed-Origin". when you are writing the Web Api endpoint for validate "options" method, it should return the response with a header "WebHook-Allowed-Origin" with value "*" or the service domain (e.g., xxx.webpubsub.azure.com).
 
 <br/>
 
