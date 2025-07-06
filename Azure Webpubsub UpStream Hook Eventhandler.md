@@ -85,13 +85,13 @@ The value of WebHook-Allowed-Origin can be either * (allowing any origin) or the
 
   <br/>
   
-    [Function("Broadcast1")]
+     [Function("Broadcast1")]
     public async Task Run(
-      [WebPubSubTrigger("%HubPub%", WebPubSubEventType.System, "Connected")] ConnectedEventRequest request)
-  {
-  
-          await Task.CompletedTask;
-  }
+    [WebPubSubTrigger("%HubPub%", WebPubSubEventType.System, "Connected")] ConnectedEventRequest request)
+    {
+	    await Task.CompletedTask;
+    }
+
 
   <br/>
 
