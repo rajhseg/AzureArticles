@@ -2,6 +2,10 @@
 
 # 1. WebPubSub Service articles.
   To add a upstream eventhandler we have to add two endpoints one is Validate Options method endpoint, another one is event based endpoint, for example if the system event connect you want to hookup then it should be connect post method endpoint. Here we are using the Azure functons to create a http based two endpoints for upstream hookup eventhandler, if you want you can use the webapi also for this two endpoints. for example if this is the upstream hookup eventhandler url http://{func-host or hostname}/api/{event} then the validate options method url will be http://{func-host or hostname}/api/validate.
+<br/>
+When the PubSub service is connecting to the App, it first does an OPTIONS request to the "/validate" endpoint. This request expects a response with HTTP header "WebHook-Allowed-Origin". 
+<br/>
+When configuring an Azure Web PubSub event handler, the service validates the upstream webhook URL using the CloudEvents Abuse Protection mechanism. This validation involves checking for the WebHook-Allowed-Origin header in the response to an OPTIONS request. The WebHook-Request-Origin header, set to the service domain (e.g., xxx.webpubsub.azure.com), is included in the OPTIONS request, and the upstream endpoint must respond with WebHook-Allowed-Origin header, which can be either * or the service domain. 
   
   1. Validate options method in azure function for upstream handler
      
