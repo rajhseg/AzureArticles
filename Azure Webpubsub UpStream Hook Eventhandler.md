@@ -83,7 +83,7 @@ The value of WebHook-Allowed-Origin can be either * (allowing any origin) or the
 
   For the Connected Event function will be like below.
 
-  <br />
+  <br/>
   
   [Function("Broadcast1")]
   public async Task Run(
@@ -93,7 +93,7 @@ The value of WebHook-Allowed-Origin can be either * (allowing any origin) or the
           await Task.CompletedTask;
   }
 
-  <br />
+  <br/>
 
   For the DisConnected Event function will be like below.
 
