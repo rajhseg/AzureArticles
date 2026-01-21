@@ -1,3 +1,4 @@
+### Various Ways to Add Custom Properties in Application Insights
 This read me will have details of various ways to add the custom properties in application insights.
 
 1. Direct Logger
