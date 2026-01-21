@@ -66,7 +66,7 @@ cli.TrackTrace(tracTele);
 # Using Custom Telemetry Initializer
 This will run in Pipeline for all telemetry's before send the logs to Azure monitor.
 <br />
-For example we will add property to all Trace Telemetry 
+For example we will add property to all **Trace Telemetry** 
 <br />
 
 ```nginx
