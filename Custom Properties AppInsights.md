@@ -8,7 +8,7 @@ This read me will have details of various ways to add the custom properties in a
 
 # Direct Logger
 In Direct Logger method using curly brackets to identify the properties name inside log method. <br/>
-Here AuthorTimeStamp and Id are consider as Properties and there values from right side.
+Here **AuthorTimeStamp** and **Id** are consider as Properties and there values from right side.
 <br />
 
 ```nginx
@@ -22,6 +22,23 @@ logger.LogError("EXception: GetAuthor called for id: {Id} {AuthorTimeStamp}", Id
 <br />
 
 # Using Scopes
+In this method it will apply the properties for all logger inside the scope. <br />
+Here **AuthorScope** is the Parameter name applied for both logs.
+<br />
+
+```nginx
+
+using (logger.BeginScope(new Dictionary<string, object>
+{
+    ["AuthorScope"] = "12345"
+}))
+{
+    logger.LogDebug("Debug: GetAuthor called for id: {Id} {AuthorTimeStamp}", Id, DateTime.UtcNow);
+
+    logger.LogError("EXception: GetAuthor called for id: {Id} {AuthorTimeStamp}", Id, DateTime.UtcNow);
+}
+
+```
 
 <br />
 
