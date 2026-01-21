@@ -43,13 +43,54 @@ using (logger.BeginScope(new Dictionary<string, object>
 <br />
 
 # Using Telemetry Client
+This is direct method using telemetry client, we will create a Exception Telemetry for sample.
+<br />
+
+```nginx
+
+var excepTele = new ExceptionTelemetry(new Exception("Sample exception"));
+excepTele.Properties["AuthorExcep"] = "1234";
+
+var tracTele = new TraceTelemetry("AuthorTrace", SeverityLevel.Information);
+tracTele.Properties["AuthorTrace"] = "1234";
+
+TelemetryClient cli = new TelemetryClient();
+cli.TrackException(excepTele);
+cli.TrackTrace(tracTele);
+
+
+```
 
 <br />
 
 # Using Custom Telemetry Initializer
+This will run in Pipeline for all telemetry's before send the logs to Azure monitor.
+<br />
+For example we will add property to all Trace Telemetry 
+<br />
+
+```nginx
+
+    internal class CustomTraceTelemetryInitializer : ITelemetryInitializer
+    {
+        public void Initialize(ITelemetry telemetry)
+        {
+            if (telemetry is TraceTelemetry traceTelemetry) {
+                traceTelemetry.Properties["AuthorTraceGlobal"] = "234";
+            }
+        }
+    }
+
+builder.Services.AddSingleton<ITelemetryInitializer, CustomTraceTelemetryInitializer>();
+
+```
 
 <br />
 
 # Using Custom Telemetry Processor
+This will run in Pipeline for all telemetry's before send the logs to Azure monitor
+<br />
+
+
 
 <br />
