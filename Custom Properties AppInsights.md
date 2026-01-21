@@ -81,16 +81,37 @@ For example we will add property to all **Trace Telemetry**
         }
     }
 
-builder.Services.AddSingleton<ITelemetryInitializer, CustomTraceTelemetryInitializer>();
+    builder.Services.AddSingleton<ITelemetryInitializer, CustomTraceTelemetryInitializer>();
 
 ```
 
 <br />
 
 # Using Custom Telemetry Processor
-This will run in Pipeline for all telemetry's before send the logs to Azure monitor
+This will run in Pipeline for all telemetry's before send the logs to Azure monitor.
+<br />
+For example we will add property to all Success **Request Telemetry**
 <br />
 
+```nginx
 
+
+    internal class CustomTelemetryProcessor(ITelemetryProcessor next) : ITelemetryProcessor
+    {
+        public void Process(ITelemetry item)
+        {
+            if(item is RequestTelemetry requestTelemetry && requestTelemetry.ResponseCode == "200")
+            {
+                requestTelemetry.Properties["AuthorSuccess"] = "123";
+            }
+
+            next.Process(item);
+        }
+    }
+
+
+    builder.Services.AddApplicationInsightsTelemetryProcessor<CustomTelemetryProcessor>();
+
+```
 
 <br />
